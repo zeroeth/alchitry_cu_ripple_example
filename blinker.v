@@ -1,4 +1,5 @@
 module blinker(
+  // Figure out parameter (like wave)
     input clk,
     input rst,
     output blink

@@ -1,4 +1,4 @@
-module clock_divider(
+module clock_ripple(
   input clk,
   input reset,
   output reg clk_div2,
@@ -8,6 +8,7 @@ module clock_divider(
   output reg clk_div32,
   output reg clk_div64,
   output reg clk_div128,
+  output reg clk_div256
 );
 
   // simple ripple clock divider
@@ -33,4 +34,6 @@ module clock_divider(
   always @(posedge clk_div64)
     clk_div128 <= ~clk_div128;
 
+  always @(posedge clk_div128)
+    clk_div256 <= ~clk_div256;
 endmodule

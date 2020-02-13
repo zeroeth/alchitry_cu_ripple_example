@@ -2,8 +2,13 @@ module cu_top(
     input clk,
     input rst_n,
     output[7:0] led,
-    input usb_rx,
-    output usb_tx
+
+    input  usb_rx,
+    output usb_tx,
+
+    output[7:0] io_led_0,
+    output[7:0] io_led_1,
+    output[7:0] io_led_2,
     );
 
     wire rst;
@@ -23,18 +28,56 @@ module cu_top(
       .blink(slow_clock)
     );
 
-    assign led[0] = slow_clock;
-
     clock_ripple my_clock (
       .clk(slow_clock),
       .reset(rst),
-      .clk_div2(led[1]),
-      .clk_div4(led[2]),
-      .clk_div8(led[3]),
-      .clk_div16(led[4]),
-      .clk_div32(led[5]),
-      .clk_div64(led[6]),
-      .clk_div128(led[7]),
+      .clk_div2  (led[0]),
+      .clk_div4  (led[1]),
+      .clk_div8  (led[2]),
+      .clk_div16 (led[3]),
+      .clk_div32 (led[4]),
+      .clk_div64 (led[5]),
+      .clk_div128(led[6]),
+      .clk_div256(led[7]),
+    );
+
+    clock_ripple my_clock_io0 (
+      .clk(slow_clock),
+      .reset(rst),
+      .clk_div2  (io_led_0[0]),
+      .clk_div4  (io_led_0[1]),
+      .clk_div8  (io_led_0[2]),
+      .clk_div16 (io_led_0[3]),
+      .clk_div32 (io_led_0[4]),
+      .clk_div64 (io_led_0[5]),
+      .clk_div128(io_led_0[6]),
+      .clk_div256(io_led_0[7]),
+    );
+
+    clock_ripple my_clock_io1 (
+      .clk(slow_clock),
+      .reset(rst),
+      .clk_div2  (io_led_1[0]),
+      .clk_div4  (io_led_1[1]),
+      .clk_div8  (io_led_1[2]),
+      .clk_div16 (io_led_1[3]),
+      .clk_div32 (io_led_1[4]),
+      .clk_div64 (io_led_1[5]),
+      .clk_div128(io_led_1[6]),
+      .clk_div256(io_led_1[7]),
+    );
+
+    clock_ripple my_clock_io2 (
+      .clk(slow_clock),
+      .reset(rst),
+      .clk_div2  (io_led_2[0]),
+      .clk_div4  (io_led_2[1]),
+      .clk_div8  (io_led_2[2]),
+      .clk_div16 (io_led_2[3]),
+      .clk_div32 (io_led_2[4]),
+      .clk_div64 (io_led_2[5]),
+      .clk_div128(io_led_2[6]),
+      .clk_div256(io_led_2[7]),
     );
 
 endmodule

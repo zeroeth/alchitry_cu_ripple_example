@@ -1,0 +1,88 @@
+# io board from https://github.com/alchitry/Alchitry-Labs/blob/master/library/components/io.acf
+# alchitry expansion port mappings using table from:
+# https://github.com/alchitry/Alchitry-Labs/blob/master/src/com/alchitry/labs/hardware/pinout/AlchitryCuPinConverter.java
+
+alchitry_port_pin, ice40_pin, alchitry_io_pin
+port_A2,  M1, io_led_segment[6]
+port_A3,  L1, io_led_segment[5]
+port_A5,  J1, io_led_segment[0]
+port_A6,  J3, io_led_segment[1]
+port_A8,  G1, io_led_segment_sel[1]
+port_A9,  G3, io_led_segment_sel[0]
+port_A11, E1, io_led_2[7]
+port_A12, D1, io_led_2[6]
+port_A14, C1, io_led_2[5]
+port_A15, B1, io_led_2[4]
+port_A17, D3, io_led_2[3]
+port_A18, C3, io_led_2[2]
+port_A20, A1, io_led_2[1]
+port_A21, A2, io_led_2[0]
+port_A23, A3, io_led_1[7]
+port_A24, A4, io_led_1[6]
+port_A27, A5
+port_A28, C5
+port_A30, D5
+port_A31, C4
+port_A33, D4
+port_A34, E4
+port_A36, F4
+port_A37, F3
+port_A39, H4
+port_A40, G4
+port_A42, H1, io_led_segment_sel[2]
+port_A43, H3, io_led_segment_sel[3]
+port_A45, K3, io_led_segment[4]
+port_A46, K4, io_led_segment[3]
+port_A48, N1, io_led_segment[2]
+port_A49, P1, io_led_segment[7]
+
+port_B2,  A6,  io_led_1[5]
+port_B3,  A7,  io_led_1[4]
+port_B5,  A10, io_led_1[3]
+port_B6,  A11, io_led_1[2]
+port_B8,  C9,  io_led_1[1]
+port_B9,  C10, io_led_1[0]
+port_B11, A12, io_led_0[7]
+port_B12, B14, io_led_0[6]
+port_B14, C14, io_led_0[5]
+port_B15, D14, io_led_0[4]
+port_B17, E14, io_led_0[3]
+port_B18, E12, io_led_0[2]
+port_B20, F14, io_led_0[1]
+port_B21, G14, io_led_0[0]
+
+port_B23, H12
+port_B24, J12
+port_B27, H11
+port_B28, G11
+port_B30, G12
+port_B31, F12
+port_B33, F11
+port_B34, E11
+port_B36, D12
+port_B37, D11
+port_B39, C12
+port_B40, C11
+port_B42, D10
+port_B43, D9
+port_B45, D7
+port_B46, D6
+port_B48, C7
+port_B49, C6
+
+port_C2,  M3
+port_C3,  M4
+port_C5,  L4
+port_C6,  L5
+port_C8,  M6
+port_C9,  M7
+port_C11, L9
+
+port_C39, P10
+port_C40, P9
+port_C42, L8
+port_C43, L6
+port_C45, P5
+port_C46, P4
+port_C48, P3
+port_C49, P2
