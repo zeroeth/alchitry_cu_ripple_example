@@ -6,9 +6,13 @@ module cu_top(
     input  usb_rx,
     output usb_tx,
 
+    /* IO Shield outputs */
     output[7:0] io_led_0,
     output[7:0] io_led_1,
     output[7:0] io_led_2,
+
+    output[3:0] io_led_segment_sel,
+    output[7:0] io_led_segment,
     );
 
     wire rst;
@@ -40,6 +44,9 @@ module cu_top(
       .clk_div128(led[6]),
       .clk_div256(led[7]),
     );
+
+
+    /* Section below for IO shield */
 
     clock_ripple my_clock_io0 (
       .clk(slow_clock),
@@ -78,6 +85,28 @@ module cu_top(
       .clk_div64 (io_led_2[5]),
       .clk_div128(io_led_2[6]),
       .clk_div256(io_led_2[7]),
+    );
+
+    clock_ripple my_clock_io_seg (
+      .clk(slow_clock),
+      .reset(rst),
+      .clk_div2  (io_led_segment[7]),
+      .clk_div4  (io_led_segment[0]),
+      .clk_div8  (io_led_segment[1]),
+      .clk_div16 (io_led_segment[2]),
+      .clk_div32 (io_led_segment[3]),
+      .clk_div64 (io_led_segment[4]),
+      .clk_div128(io_led_segment[5]),
+      .clk_div256(io_led_segment[6]),
+    );
+
+    clock_ripple my_clock_io_seg_sel (
+      .clk(slow_clock),
+      .reset(rst),
+      .clk_div2  (io_led_segment_sel[0]),
+      .clk_div4  (io_led_segment_sel[1]),
+      .clk_div8  (io_led_segment_sel[2]),
+      .clk_div16 (io_led_segment_sel[3]),
     );
 
 endmodule
